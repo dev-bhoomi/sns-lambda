@@ -33,24 +33,6 @@ This setup sends an SNS notification every time a Lambda function is executed. T
 
 1. Go to the **IAM Console**.
 2. Select the role assigned to your Lambda function.
-3. Attach a policy to allow publishing to the SNS topic:Replace:
-    
-    ```json
-    json
-    Copy code
-    {
-        "Effect": "Allow",
-        "Action": "sns:Publish",
-        "Resource": "arn:aws:sns:region:account-id:LambdaExecutionNotification"
-    }
-    
-    ```
-    
-    - `region`: Your AWS region (e.g., `us-east-1`).
-    - `account-id`: Your AWS account ID.
-    - `LambdaExecutionNotification`: Your SNS topic name.
-
----
 
 ### **Step 3: Modify the Lambda Code to Publish to SNS**
 
